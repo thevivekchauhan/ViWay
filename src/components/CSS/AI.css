@@ -1,0 +1,749 @@
+.ai-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 200px;
+  /* Adds space below the component */
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ai-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.ai-title-right {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.ai-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.ai-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.ai-input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.ai-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.ai-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.ai-answer-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-height: 50px;
+  width: 100%;
+  margin-bottom: 50px;
+  /* Adds space below the answer */
+  transition: transform 0.3s;
+}
+
+.ai-answer-container:hover {
+  transform: scale(1.02);
+}
+
+.ai-answer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.ai-logo,
+.ai-image {
+  margin-top: 20px;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-logo {
+  width: 150px;
+  height: auto;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.ai-logo:hover {
+  transform: rotateY(160deg);
+  /* Rotate the logo 360 degrees on the Y-axis */
+}
+
+.ai-additional-info {
+  font-size: 17px;
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.ai-container-right {
+  align-items: flex-end;
+  /* Align the container to the right */
+  margin-left: auto;
+  /* Shift the container to the right */
+  margin-right: 0;
+}
+
+.ai-container-center {
+  margin-right: auto;
+  /* Shift the container to the left */
+  margin-left: 0;
+}
+
+button {
+  position: relative;
+  width: 11em;
+  height: 4em;
+  outline: none;
+  transition: 0.1s;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+#clip {
+  --color: #2761c3;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: 5px double var(--color);
+  box-shadow: inset 0px 0px 15px #195480;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.arrow {
+  position: absolute;
+  transition: 0.2s;
+  background-color: #2761c3;
+  top: 35%;
+  width: 11%;
+  height: 30%;
+}
+
+#leftArrow {
+  left: -13.5%;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+
+#rightArrow {
+  -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+  left: 102%;
+}
+
+button:hover #rightArrow {
+  background-color: #007bff;
+  left: -15%;
+  animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+}
+
+button:hover #leftArrow {
+  background-color: #27c39f;
+  left: 103%;
+  animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+}
+
+.corner {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  background-color: #2761c3;
+  box-shadow: inset 1px 1px 8px #2781c3;
+  transform: scale(1) rotate(45deg);
+  transition: 0.2s;
+}
+
+#rightTop {
+  top: -1.98em;
+  left: 91%;
+}
+
+#leftTop {
+  top: -1.96em;
+  left: -3.0em;
+}
+
+#leftBottom {
+  top: 2.10em;
+  left: -2.15em;
+}
+
+#rightBottom {
+  top: 45%;
+  left: 88%;
+}
+
+button:hover #leftTop {
+  animation: 0.1s ease-in-out 0.05s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover #rightTop {
+  animation: 0.1s ease-in-out 0.15s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover #rightBottom {
+  animation: 0.1s ease-in-out 0.25s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover #leftBottom {
+  animation: 0.1s ease-in-out 0.35s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover .corner {
+  transform: scale(1.25) rotate(45deg);
+}
+
+button:hover #clip {
+  animation: 0.2s ease-in-out 0.55s both greenLight8;
+  --color: #27c39f;
+}
+
+@keyframes changeColor8 {
+  from {
+    background-color: #2781c3;
+  }
+
+  to {
+    background-color: #27c39f;
+  }
+}
+
+@keyframes lightEffect8 {
+  from {
+    box-shadow: 1px 1px 5px #27c39f;
+  }
+
+  to {
+    box-shadow: 0 0 2px #27c39f;
+  }
+}
+
+@keyframes greenLight8 {
+  from {}
+
+  to {
+    box-shadow: inset 0px 0px 32px #27c39f;
+  }
+}
+
+@keyframes leftArrow8 {
+  from {
+    transform: translate(0px);
+  }
+
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes rightArrow8 {
+  from {
+    transform: translate(0px);
+  }
+
+  to {
+    transform: translateX(-10px);
+  }
+}
+
+
+.card {
+  --background: linear-gradient(to right, #74ebd5 0%, #acb6e5 100%);
+  width: 190px;
+  height: 254px;
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible;
+  background: #74ebd5;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+  perspective: 1000px;
+  /* Ensure the card has perspective to enable 3D rotation */
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: -1;
+}
+
+.card::before {
+  background: linear-gradient(to bottom right, #f6d365 0%, #fda085 100%);
+  transform: rotate(2deg);
+}
+
+.card::after {
+  background: linear-gradient(to top right, #84fab0 0%, #8fd3f4 100%);
+  transform: rotate(-2deg);
+}
+
+.card-info {
+  --color: #292b2c;
+  background: var(--color);
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+  position: relative;
+  z-index: 2;
+  flex-direction: column; /* Ensure content is stacked vertically */
+}
+
+.card .title {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  position: absolute;
+  top: 10px; /* Position title at the top */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(250, 184, 118); /* Add background for better visibility */
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center; /* Center text */
+  width: calc(100% - 20px); /* Ensure title width fits within the card */
+  z-index: 3; /* Ensure title is on top */
+}
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 0;
+}
+
+.card:hover .card-info {
+  color: #74ebd5;
+  transition: color 1s;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card:hover {
+  transform: rotateY(-360deg);
+  /* Rotate the card 360 degrees from right to left on the Y-axis */
+  transition: transform 0.6s ease-in-out;
+  /* Smooth transition */
+  background: var(--background);
+  /* Ensure background color is retained */
+  color: inherit;
+  /* Ensure text color is retained */
+}
+
+.card-title {
+  font-size: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .card-title {
+    font-size: 1em;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .card .title {
+    position: static;
+    transform: none;
+    background: none;
+    padding: 0;
+    margin-top: 10px; /* Add margin to separate from the card */
+    width: 100%;
+    font-size: 1em;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-container {
+    padding: 10px;
+    margin-bottom: 100px;
+  }
+
+  .ai-title {
+    font-size: 24px;
+  }
+
+  .ai-input-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ai-input {
+    width: 100%;
+  }
+
+  .ai-button {
+    width: 25%;
+    height: 95%;
+    padding: 10px;
+  }
+
+  .ai-answer-container {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .ai-answer {
+    font-size: 16px;
+  }
+
+  .ai-logo,
+  .ai-image {
+    max-width: 80%;
+  }
+
+  .drawer {
+    width: 90%;
+    height: 60%;
+  }
+
+  .card {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-title {
+    font-size: 20px;
+  }
+
+  .ai-input {
+    font-size: 14px;
+  }
+
+  .ai-button {
+    font-size: 18px;
+  }
+
+  .ai-answer {
+    font-size: 14px;
+  }
+
+  .drawer {
+    width: 95%;
+    height: 70%;
+  }
+
+  .card {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+/* Drawer - Centered & Responsive */
+.drawer {
+  position: fixed;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Align items to the top */
+  max-height: 80vh;
+  /* Bigger drawer */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  scroll-behavior: smooth;
+  /* Smooth scrolling */
+}
+
+.fixed-button {
+  position: fixed;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.close-drawer {
+  background: red;
+  color: white;
+  border: none;
+  font-size: 18px;
+  /* Bigger by default */
+  padding: 12px 18px;
+  /* More padding */
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+}
+
+
+
+
+
+/* Mobile: Even Bigger */
+@media (max-width: 767px) {
+  .close-drawer {
+    height: 30px;
+    width: 20px;
+    /* font-size: 9px; Bigger on mobile */
+    padding: 5px 4px;
+    /* More spacing */
+  }
+}
+
+@media (min-width: 767px) {
+  .close-drawer {
+    height: 30px;
+    width: 60px;
+    /* font-size: 9px; Bigger on mobile */
+    padding: 5px 4px;
+    /* More spacing */
+  }
+}
+
+
+/* Drawer Title */
+.drawer-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Card container: Horizontal for desktop, Vertical for mobile */
+.card-container {
+  display: flex;
+  padding: 11px;
+  gap: 41px;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 60vh;
+  scroll-behavior: smooth;
+}
+
+.card-containernew {
+  padding: 11px;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Individual Card */
+.card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  min-width: 150px;
+}
+
+/* Card Hover Effect */
+
+.card:hover {
+  transform: rotateY(-360deg);
+  /* Rotate the card 360 degrees from right to left on the Y-axis */
+  transition: transform 0.4s ease-in-out;
+  /* Smooth transition */
+  background: var(--background);
+  /* Ensure background color is retained */
+  color: inherit;
+  /* Ensure text color is retained */
+}
+
+/* Title inside the card */
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* === Centering Drawer & Responsive Design === */
+
+/* Desktop View: Centered Horizontal Drawer */
+@media (min-width: 768px) {
+  .drawer {
+    width: 80vw;
+    max-width: 1000px;
+    height: 80vh;
+    /* Keep full height */
+    top: 55%;
+    /* Move drawer down slightly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card-container {
+    flex-direction: row;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    /* Horizontal scrolling */
+  }
+
+  .card {
+    flex: 0 0 auto;
+    min-width: 180px;
+  }
+}
+
+/* Mobile View: Centered Vertical Drawer */
+@media (max-width: 767px) {
+  .drawer {
+    width: 90%;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card-container {
+    display: flex;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    scroll-behavior: smooth;
+    gap: 20px;
+    /* Add space between cards */
+    padding: 10px;
+    white-space: nowrap;
+    /* Prevent wrapping */
+  }
+
+  .card {
+    flex: 0 0 auto;
+    /* Keep cards same size */
+    width: 80%;
+    /* Make them take most of the space */
+    max-width: 300px;
+    /* Limit width */
+    margin: 0 auto;
+    /* Center the cards */
+  }
+}
+
+/* ...existing code... */
+
+.attraction-card {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.attraction-card:hover {
+  transform: scale(1.05);
+}
+
+.attraction-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.attraction-description,
+.attraction-timings,
+.attraction-ticket {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.attraction-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}

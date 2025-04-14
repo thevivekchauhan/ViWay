@@ -1,0 +1,124 @@
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.newstext h2 {
+    margin-top: 50px;
+    font-size: 32px;
+}
+
+.newstext p {
+    font-size: 18px;
+    color: #4c4c4c;
+}
+
+.newsletter form {
+    margin-top: 50px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter form input:first-child {
+    width: 300px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 150px 20px 30px;
+    box-shadow: 5px 10px 30px rgba(85, 85, 85, 0.2);
+}
+
+.newsletter form input:last-child {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(21, 74, 74);
+    padding: 14px 30px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 450;
+    top: 6px;
+    right: 6px;
+    transition: ease 0.3s;
+}
+
+.newsletter form input:last-child:hover {
+    border: 2px solid rgb(21, 74, 74);
+    background-color: white;
+    color: rgb(21, 74, 74);
+}
+
+.text h2 {
+    font-size: 40px;
+    font-weight: 650;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    line-height: 2;
+    text-align: center;
+}
+
+.rowitems {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Always 3 columns */
+    gap: 25px;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.container-box {
+    border: 1px rgb(21, 74, 74);
+    border-radius: 5px;
+    padding: 40px 10px;
+    transition: all 0.7s ease 0s;
+    cursor: pointer;
+}
+
+.container-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-box h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 550;
+}
+
+.container-box p {
+    font-size: 16px;
+    color: #808080;
+}
+
+.container-box:hover {
+    transform: translateX(3px);
+    box-shadow: 5px 20px 50px rgba(78, 78, 78, 0.1);
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
+
+/* Ensure 3 columns for all screen sizes */
+@media (max-width: 1024px) {
+    .rowitems {
+        grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Still 3 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .rowitems {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3 columns even on mobile */
+    }
+    .newsletter form input:first-child {
+        width: 80%;
+    }
+    .newstext h2 {
+        font-size: 24px;
+    }
+}

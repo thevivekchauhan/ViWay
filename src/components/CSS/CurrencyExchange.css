@@ -1,0 +1,122 @@
+.currency-exchange-container {
+    max-width: 90%;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    /* background: rgb(21, 74, 74); */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0.5, 0.5);
+}
+
+.currency-exchange-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f2f2f2;
+}
+
+.currency-exchange-select-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.currency-exchange-select {
+    width: 100%;
+}
+
+.small-select {
+    width: 180px; /* Smaller width */
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.small-select:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.currency-exchange-rate {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ddd;
+}
+
+.currency-exchange-input-label {
+    font-size: 1rem;
+    color: #f2f2f2;
+}
+
+.currency-exchange-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.currency-exchange-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.currency-exchange-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.currency-exchange-button {
+    padding: 10px 15px;
+    font-size: 13px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.currency-exchange-button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .currency-exchange-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .small-select {
+        width: 150px;
+    }
+
+    .currency-exchange-button {
+        width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .currency-exchange-title {
+        font-size: 1.3rem;
+    }
+
+    .small-select {
+        width: 257px;
+        font-size: 12px;
+    }
+
+    .currency-exchange-button {
+        font-size: 0.9rem;
+    }
+}

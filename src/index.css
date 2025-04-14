@@ -1,0 +1,22 @@
+body {
+    cursor: none; /* Hide the default cursor */
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgb(118, 220, 29); /* Default border color */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, border-color 0.3s ease;
+    z-index: 10000; /* Ensure the custom cursor is on top */
+}
+
+
+.zoom-text, .navbar a {
+    transform: none; /* Remove zoom effect */
+}

@@ -1,0 +1,240 @@
+/* .locations {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+
+.package-title h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.location-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.location-card {
+    position: relative;
+    width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    filter: brightness(90%); 
+}
+
+.location-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%); 
+}
+
+.location-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.location-info {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.location-card:hover .location-info {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.location-info h5 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.location-info p {
+    font-size: 16px;
+}
+
+.col-content {
+    position: relative;
+    filter: brightness(95%);
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.col-content:hover {
+    filter: brightness(120%);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+ */
+
+
+
+
+.locations {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+
+.package-title h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.location-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* .location-card {
+    position: relative;
+    width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.0s ease;
+    filter: brightness(85%);
+}
+
+.location-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%);
+} */
+
+.location-card {
+    position: relative;
+    width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    filter: blur(0.6px) brightness(89%);
+}
+
+.location-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    filter: blur(0px) brightness(100%);
+}
+
+
+
+.location-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.location-info {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.location-card:hover .location-info {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.location-info h5 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.location-info p {
+    font-size: 16px;
+}
+
+.col-content {
+    position: relative;
+    filter: brightness(95%);
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.col-content:hover {
+    filter: brightness(120%);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.flip-card {
+    width: 150px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.card-containernew {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.titlelocaion {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid coral;
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
+            rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+    color: coral;
+}
+
+.flip-card-back {
+    background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+            bisque 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
